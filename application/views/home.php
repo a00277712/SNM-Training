@@ -1,9 +1,10 @@
 <div class="col page-content">
     <div class="row">
-        <div class="col-6">
-        <h1>Welcome to<br>SNM Training </h1>
+        <div class="col-12 col-md-6">
+            <h1>Welcome to<br>SNM Training </h1>
         </div>
-        <div class="col-6">At SNM Training we provide professional, high impact training programmes across multiple disciplines in all sectors.
+        <div class="col-12 col-md-6 text-welcome">
+            At SNM Training we provide professional, high impact training programmes across multiple disciplines in all sectors.
             By working together, we can provide relevant, flexible and affordable training to suit individual business needs.
             Our aim is to support your business and employees to become more productive, efficient and competitive through upskilling and development Irish businesses.
         </div>
