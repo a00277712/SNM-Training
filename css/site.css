@@ -19,9 +19,19 @@
     padding: 10px;
 }
 
+.banner-img {
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.banner-img img{
+    width: 100%;
+}
+
 .footer {
     text-align: center;
     background-color: #343a40;
     color: white;
     padding: 10px;
 }
+
