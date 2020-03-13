@@ -1,75 +1,32 @@
 <?php $title = "Contact Us" ?>
-<?php
-// define variables and set to empty values
-$nameErr = $emailErr = $commentErr ="";
-$name = $email = $comment = $phone = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed";
-    }
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
-    }
-  }
-    
-  if (empty($_POST["phone"])) {
-    $phone = "";
-  } else {
-    $phone = test_input($_POST["phone"]);
-  }
+<h2>Contact Us</h2>
+<form action="<?= site_url('contact/store') ?>" method="POST" >
+    <?php if ( isset($error) && $error) { ?>
+        <div class="alert alert-warning alert-dismissible fade show">
+            <?php echo validation_errors(); ?>
+        </div>
+    <?php } ?>
 
-  if (empty($_POST["comment"])) {
-    $comment = "";
-    $commentErr = "Comment is required";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-}
+    <div class="form-group">
+        <label for="nameInput">Name</label>
+        <input type="text" name="name" class="form-control" id="nameInput" value="<?php echo set_value('name'); ?>" placeholder="Enter Name">
+    </div>
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
+    <div class="form-group">
+        <label for="emailInput">Email</label>
+        <input type="text" name="email" class="form-control" id="emailInput" value="<?php echo set_value('email'); ?>" placeholder="Enter Email">
+    </div>
 
-<h2>PHP Form Validation Example</h2>
-<p><span class="error">* required field</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name" value="<?php echo $name;?>">
-  <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-  <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
-  Phone: <input type="text" name="phone" value="<?php echo $phone;?>">
-  <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-  <br><br>
-  <input type="submit" name="submit" value="Submit">  
+    <div class="form-group">
+        <label for="phoneInput">Phone Number</label>
+        <input type="text" name="phone" class="form-control" id="phoneInput" value="<?php echo set_value('phone'); ?>" placeholder="Enter Phone NUmber">
+    </div>
+
+    <div class="form-group">
+        <label for="commentInput">Comment</label>
+        <textarea name="comment" rows="5" cols="40" class="form-control" id="commentInput" value="<?php echo set_value('comment'); ?>" placeholder="Enter Comment"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $phone;
-echo "<br>";
-echo $comment;
-?>
