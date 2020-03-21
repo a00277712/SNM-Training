@@ -18,7 +18,7 @@ class Feedback_model extends CI_Model {
     }
 
     public function get_all() {
-            $query = $this->db->get($table);            
+            $query = $this->db->get($this->table);            
             return $query->result_array();        
     }
 

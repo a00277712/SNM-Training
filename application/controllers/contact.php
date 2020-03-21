@@ -14,8 +14,8 @@ class Contact extends CI_Controller {
         $this->load->view('layout/header');  
         $this->load->view('contact');  
         $this->load->view('layout/footer');  
-    }  
-
+    }
+    
     public function store($id = null) {
         $rules = array(
             array(
