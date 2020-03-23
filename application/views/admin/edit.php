@@ -35,7 +35,7 @@
 
     <div class="form-group">
         <label for="priorityInput">Priority</label>
-        <select type="text" name="priority" class="form-control" id="priorityInput" placeholder="Select Priority">
+        <select type="text" name="priority" class="form-control" id="priorityInput">
             <option value='High' <?php if($Priority == 'High'){ echo ' selected="selected"'; } ?>>High</option>
             <option value='Medium' <?php if($Priority == 'Medium'){ echo ' selected="selected"'; } ?>>Medium</option>
             <option value='Low' <?php if($Priority == 'Low'){ echo ' selected="selected"'; } ?>>Low</option>
@@ -44,7 +44,7 @@
 
     <div class="form-group">
         <label for="statusInput">Status</label>
-        <select type="text" name="status" class="form-control" id="statusInput" placeholder="Select Status">
+        <select type="text" name="status" class="form-control" id="statusInput">
             <option value='Open' <?php if($IssueStatus == 'Open'){ echo ' selected="selected"'; } ?>>Open</option>
             <option value='In Progress' <?php if($IssueStatus == 'In Progress'){ echo ' selected="selected"'; } ?>>In Progress</option>
             <option value='Awaiting Feedback' <?php if($IssueStatus == 'Awaiting Feedback'){ echo ' selected="selected"'; } ?>>Awaiting Feedback</option>
