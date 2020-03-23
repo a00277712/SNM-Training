@@ -20,7 +20,7 @@
 
     <div class="form-group">
         <label for="phoneInput">Phone Number</label>
-        <input type="text" name="phone" class="form-control" id="phoneInput" value="<?php echo set_value('phone'); ?>" placeholder="Enter Phone NUmber">
+        <input type="text" name="phone" class="form-control" id="phoneInput" value="<?php echo set_value('phone'); ?>" placeholder="Enter Phone Number">
     </div>
 
     <div class="form-group">

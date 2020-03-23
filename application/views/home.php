@@ -1,7 +1,7 @@
 <div class="col page-content">
     <div class="row">
         <div class="col-12 col-md-6">
-            <h1>Welcome to<br>SNM Training </h1>
+            <h1>Welcome to<br/>SNM Training </h1>
         </div>
         <div class="col-12 col-md-6 text-welcome">
             At SNM Training we provide professional, high impact training programmes across multiple disciplines in all sectors.

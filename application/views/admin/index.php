@@ -22,7 +22,7 @@
         echo '<tr><td>' . $row['Id'] . '</td><td>' . 
         $row['DateCreated'] . '</td><td>'.$row['Title'] . '</td><td>'. $row['FullName'] . 
         '</td><td>'.$row['Email'] . '</td><td>'.$row['Phone'] . '</td><td>' . $row['UserComment'] . 
-        '</td><td>'.$row['Priority'] . '</td><td>'.$row['IssueStatus'] . '</td><td><a href="' . site_url('/edit') . '/' . $row['Id'] .'">Edit</a></tr>';
+        '</td><td>'.$row['Priority'] . '</td><td>'.$row['IssueStatus'] . '</td><td><a href="' . site_url('/admin/edit') . '/' . $row['Id'] .'">Edit</a></tr>';
     }
 ?>
     </tbody>
