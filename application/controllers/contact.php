@@ -12,7 +12,7 @@ class Contact extends CI_Controller {
     public function index()  
     {  
         $this->load->view('layout/header');  
-        $this->load->view('contact');  
+        $this->load->view('contact/index');  
         $this->load->view('layout/footer');  
     }
     
@@ -48,7 +48,7 @@ class Contact extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $data['error'] = true;
             $this->load->view('layout/header');
-            $this->load->view('contact', $data);
+            $this->load->view('contact/index', $data);
             $this->load->view('layout/footer');
         } else {
             $data = array(
