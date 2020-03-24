@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS snm_training;
+
 create database snm_training;
 
 use snm_training;
@@ -12,7 +14,7 @@ Phone varchar(30) NOT NULL,
 UserComment varchar(512) NOT NULL,
 Priority varchar(30) NULL,
 IssueStatus varchar(30) NULL
-)
+);
 
 CREATE TRIGGER DateCreated BEFORE INSERT ON  Feedback 
 FOR EACH ROW 

@@ -18,12 +18,13 @@ class Feedback_model extends CI_Model {
     }
 
     public function get_all() {
-            $query = $this->db->get($table);            
+            $query = $this->db->get($this->table);            
             return $query->result_array();        
     }
 
     public function insert($data) {
-        return $this->db->insert($this->table, $data);
+        $this->db->insert($this->table, $data);
+        return $this->db->insert_id();
     }
 
     public function update($id, $data) {
