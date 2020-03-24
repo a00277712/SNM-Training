@@ -9,7 +9,7 @@
 
                 <div class="form-group">
                     <label for="priority">Priority</label>
-                    <select type="text" name="priority" class="form-control" id="priority" onchange="filterPriority()">
+                    <select type="text" name="priority" class="form-control" id="priority" onchange="search()">
                         <option value=''>All</option>
                         <option value='High'>High</option>
                         <option value='Medium'>Medium</option>
@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <select type="text" name="status" class="form-control" id="status" onchange="filterStatus()">
+                    <select type="text" name="status" class="form-control" id="status" onchange="search()">
                         <option value=''>All</option>
                         <option value='Open'>Open</option>
                         <option value='In Progress'>In Progress</option>
@@ -60,74 +60,86 @@
 
 <script>
     function search() {
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("feedbackTable");
-        tr = table.getElementsByTagName("tr");
+
+        var table = document.getElementById("feedbackTable");
+        var trs = table.getElementsByTagName("tr");
 
         // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            tds = tr[i].getElementsByTagName("td");
-            found = false;
-            for (j = 0; j < tds.length; j++) {
-                td = tds[j];
-                if (!found) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                    found = true;
-                } else {
-                    tr[i].style.display = "none";
-                }
-                }
+        for (var row = 0; row < trs.length; row++) {
+            if(testRow(trs[row])){
+                trs[row].style.display = "";
+            } else {
+                trs[row].style.display = "none";
             }
         }
     }
 
-    function filterStatus() {
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("status");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("feedbackTable");
-        tr = table.getElementsByTagName("tr");
+    function testRow(tr) {
+        if(filterPriority(tr)){
+            if(filterStatus(tr)){
+                return filterSearch(tr);
+            }
+        }
+        //unfound
+        return false
+    }
 
+    function filterSearch(tr) {
+        var input = document.getElementById("search");
+        var filter = input.value.toUpperCase();
+
+        tds = tr.getElementsByTagName("td");
+        if(tds.length<=0){
+            //header
+            return true;
+        }
+        for (var j = 0; j < tds.length; j++) {
+            var td = tds[j];
+            var txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                return true
+            }
+        }
+        //unfound
+        return false
+    }
+
+    function filterStatus(tr) {
+        var input = document.getElementById("status");
+        var filter = input.value.toUpperCase();
         
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByClassName("Status")[0];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
+        var status = tr.getElementsByClassName("Status")[0];
+
+        if(!status){
+            //header
+            return true;
         }
+
+        var txtValue = status.textContent || status.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            return true;
+        }
+        //unfound
+        return false
     }
 
-    function filterPriority() {
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("priority");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("feedbackTable");
-        tr = table.getElementsByTagName("tr");
+    function filterPriority(tr) {
+        var input = document.getElementById("priority");
+        var filter = input.value.toUpperCase();
 
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByClassName("Priority")[0];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+        var priority = tr.getElementsByClassName("Priority")[0];
+        if(!priority){
+            //header
+            return true;
+        }
+
+        if (priority) {
+            var txtValue = priority.textContent || priority.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                return true;
             }
         }
+        //unfound
+        return false
     }
 </script>
