@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
 class Admin extends CI_Controller {  
       
-      
     public function __construct() {
         parent::__construct();
         $this->load->library('form_validation');
@@ -83,9 +82,11 @@ class Admin extends CI_Controller {
         $this->form_validation->set_rules($rules);
 
         if ($this->form_validation->run() == FALSE) {
+            $data = $this->Feedback_model->get($id);
+            $data['id'] = $id;
             $data['error'] = true;
             $this->load->view('layout/header');
-            $this->load->view('contact', $data);
+            $this->load->view('admin/edit', $data);
             $this->load->view('layout/footer');
         } else {
             $data = array(

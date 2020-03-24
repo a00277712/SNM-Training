@@ -57,9 +57,11 @@ class Contact extends CI_Controller {
         $this->form_validation->set_rules($rules);
 
         if ($this->form_validation->run() == FALSE) {
+            $data = $this->Feedback_model->get($id);
+            $data['id'] = $id;
             $data['error'] = true;
             $this->load->view('layout/header');
-            $this->load->view('contact/index', $data);
+            $this->load->view('contact/edit', $data);
             $this->load->view('layout/footer');
         } else {
             $data = array(

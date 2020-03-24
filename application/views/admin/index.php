@@ -28,7 +28,7 @@
                     </select>
                 </div>
             </div>
-            <table id="feedbackTable" class='table table-striped'>
+            <table id="feedbackTable" class='table'>
                 <thead>
                     <tr>
                         <th>ID</th>
