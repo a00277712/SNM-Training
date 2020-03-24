@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-12 col-md-6 text-welcome">
                     <br><br><br>
-                    <p>Boyle Chamber of Commerce is the promoting agency for SNM Training. This enables us to build links with industry in the North West and to support business sustainability through developing the skills and talent of employees. </p> <p>The Network operates under the guidance of an experienced Steering Group comprising of member companies, business organisations, and stakeholders..</p>
+                    <p>Boyle Chamber of Commerce is the promoting agency for SNM Training. This enables us to build links with industry in the North West region and to support business sustainability through developing the skills and talent of employees. </p> <p>The Network operates under the guidance of an experienced Steering Group comprising of member companies, business organisations, and stakeholders..</p>
                 </div>
 
 
