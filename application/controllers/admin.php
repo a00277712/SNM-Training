@@ -29,6 +29,15 @@ class Admin extends CI_Controller {
         $this->load->view('layout/footer', $data);
     }
     
+    public function delete($id = 0) {
+        if (is_null($id) || ($id == 0)) {
+            show_404(); // security                
+        }
+        
+        $this->Feedback_model->delete($id);
+        redirect(site_url('/admin') , 'redirect');
+    }
+    
     public function store($id = null) {
         $rules = array(
             array(

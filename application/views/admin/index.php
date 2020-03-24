@@ -41,6 +41,7 @@
                         <th>Priority</th>
                         <th>Status</th>
                         <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +50,9 @@
                     echo '<tr><td>' . $row['Id'] . '</td><td>' . 
                     $row['DateCreated'] . '</td><td>'.$row['Title'] . '</td><td>'. $row['FullName'] . 
                     '</td><td>'.$row['Email'] . '</td><td>'.$row['Phone'] . '</td><td>' . $row['UserComment'] . 
-                    '</td><td class="Priority">'.$row['Priority'] . '</td><td class="Status">'.$row['IssueStatus'] . '</td><td><a href="' . site_url('/admin/edit') . '/' . $row['Id'] .'">Edit</a></tr>';
+                    '</td><td class="Priority">'.$row['Priority'] . '</td><td class="Status">'.$row['IssueStatus'] . 
+                    '</td><td><a href="' . site_url('/admin/edit') . '/' . $row['Id'] .'">Edit</a></td><td><a href="' . 
+                    site_url('/admin/delete') . '/' . $row['Id'] .'">Delete</a></td></tr>';
                 }
                 ?>
                 </tbody>    
