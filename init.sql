@@ -19,3 +19,15 @@ IssueStatus varchar(30) NULL
 CREATE TRIGGER DateCreated BEFORE INSERT ON  Feedback 
 FOR EACH ROW 
 SET NEW.DateCreated = NOW();
+
+create table Feedback_Message (
+Id INT AUTO_INCREMENT PRIMARY KEY,
+FeedbackId Int NOT NULL,
+DateCreated DateTime NOT NULL,
+FullName varchar(30) NOT NULL, 
+UserComment varchar(512) NOT NULL
+);
+
+CREATE TRIGGER MessageDateCreated BEFORE INSERT ON Feedback_Message 
+FOR EACH ROW 
+SET NEW.DateCreated = NOW();

@@ -1,12 +1,11 @@
 <?php
 
-class Feedback_model extends CI_Model {
+class Feedback_message_model extends CI_Model {
 
-    protected $table = 'Feedback';
+    protected $table = 'feedback_message';
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Feedback_message_model');
     }
 
     public function get($id) {
@@ -15,7 +14,6 @@ class Feedback_model extends CI_Model {
         $this->db->from($this->table);
         $query = $this->db->get();
         $data = $query->row_array();
-        $data['Messages'] = $this->Feedback_message_model->get_all_by_id($data['Id']);
         return $data;
     }
 
@@ -24,9 +22,16 @@ class Feedback_model extends CI_Model {
             return $query->result_array();        
     }
 
+    public function get_all_by_id($feedbackId) {
+        $this->db->where($this->table . '.FeedbackId', $feedbackId);
+        $this->db->select($this->table . '.*');
+        $this->db->from($this->table);
+        $query = $this->db->get();            
+        return $query->result_array();        
+    }
+
     public function insert($data) {
-        $this->db->insert($this->table, $data);
-        return $this->db->insert_id();
+        return $this->db->insert($this->table, $data);
     }
 
     public function update($id, $data) {
