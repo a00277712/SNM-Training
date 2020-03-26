@@ -6,6 +6,17 @@
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/site.css">
+    <?php 
+
+function echoActiveIfRequestMatches($requestUri)
+{
+    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
+    if ($current_file_name == $requestUri)
+        echo 'active';
+}
+
+?>
 </head>
 <body>
     <header>
@@ -20,19 +31,16 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="<?=site_url('home')?>">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
+            <li class="nav-item <?=echoActiveIfRequestMatches("contact")?>">
                 <a class="nav-link" href="<?=site_url('contact')?>">Contact Us</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?=echoActiveIfRequestMatches("about")?>">
                 <a class="nav-link" href="<?=site_url('about')?>">About Us</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?=echoActiveIfRequestMatches("report")?>">
                 <a class="nav-link" href="<?=site_url('report')?>">Report</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?=echoActiveIfRequestMatches("admin")?>">
               <a class="nav-link" href="<?=site_url('admin')?>">Admin</a>
             </li>
           </ul>
