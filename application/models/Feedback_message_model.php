@@ -2,7 +2,7 @@
 
 class Feedback_message_model extends CI_Model {
 
-    protected $table = 'feedback_message';
+    protected $table = 'Feedback_Message';
 
     public function __construct() {
         parent::__construct();
