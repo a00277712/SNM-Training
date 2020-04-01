@@ -54,13 +54,45 @@
                     </div>
                 </div>
 
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+
+            <div class="form-group">
+                <label for="commentInput">Original Message</label>
+                <textarea name="comment" rows="5" cols="40" class="form-control" id="commentInput" disabled><?=$UserComment?></textarea>
+            </div>
+
+            <?php 
+                if($Messages){
+                    foreach($Messages as $message) {
+                        echo '<div class="form-group">
+                        <label for="commentInput">From: ' . $message['FullName'] . '</label>
+                        <textarea rows="5" cols="40" class="form-control" disabled>'. $message['UserComment'] .'</textarea>
+                        </div>';
+                    }
+                }
+            ?>
+
+            <form action="<?= site_url('admin/add_message') . '/' . $Id ?>" method="POST" >
+                <?php if ( isset($error) && $error) { ?>
+                    <div class="alert alert-warning alert-dismissible fade show">
+                        <?php echo validation_errors(); ?>
+                    </div>
+                <?php } ?>
+
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label for="nameInput">Name</label>
+                        <input type="text" name="fullName" class="form-control" id="fullNameInput" placeholder="Enter Name" required>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="commentInput">Comment</label>
-                    <textarea name="comment" rows="5" cols="40" class="form-control" id="commentInput" placeholder="Enter Comment" required><?=$UserComment?></textarea>
+                    <textarea name="newComment" rows="5" cols="40" class="form-control" id="newCommentInput" placeholder="Enter Comment" required></textarea>
                 </div>
-                
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+
+                <button type="submit" class="btn btn-primary">Reply</button>
         </div>
     </div>
 </section>

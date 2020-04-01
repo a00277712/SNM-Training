@@ -128,5 +128,17 @@ class Contact extends CI_Controller {
             redirect(site_url('/contact/edit' . '/' . $id), 'refresh');
         }
     }
+
+    public function add_message($id = null) {
+        $data = array(
+            'FeedbackId' => $id,
+            'FullName' => $this->input->post('fullName'),
+            'UserComment' => $this->input->post('newComment')
+        );
+
+        $this->Feedback_message_model->insert($data);
+    
+        redirect(site_url('/contact/edit') . '/' . $id, 'refresh');
+    }
 }  
 ?>
