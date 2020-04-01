@@ -7,6 +7,17 @@
         </div>
         <div class="col-12 col-md-6 text-welcome">
             <br><br><br>
+
+            <html>
+            <style> 
+{
+  column-count: 2;
+  margin-left: 1500px;
+}
+
+</style>
+
+<body>
             <p>At SNM Training we provide professional and high impact training programmes across multiple disciplines in all sectors.</p>
             <p>By working together, we can provide relevant, flexible and affordable training to suit individual business needs.</p>
             <p>Our aim is to support your business and employees to become more productive, efficient and competitive through upskilling and development Irish businesses.</p>
