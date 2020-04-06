@@ -91,12 +91,12 @@
         </div>
 
         <div class="column">
-            <h2>Course 1</h2>
-            <p>Intermediate Excel<br>Boyle Enterprise Centre<br>March 10th 2020,<br>9.30/4.30<br>Cost €40.00<br><br>for more information email info@snmtraining.com</p>
+            <h2>Course 2</h2>
+            <p>Intermediate Word Excel<br>Boyle Enterprise Centre<br>March 15th 2020,<br>9.30/4.30<br>Cost €40.00<br><br>for more information email info@snmtraining.com</p>
         </div>
         <div class="column">
-            <h2>Course 1</h2>
-            <p>Intermediate Excel<br>Boyle Enterprise Centre<br>March 10th 2020,<br>9.30/4.30<br>Cost €40.00<br><br>for more information email info@snmtraining.com</p>
+            <h2>Course 3</h2>
+            <p>Lean Processing<br>Boyle Enterprise Centre<br>March 20th 2020,<br>9.30/4.30<br>Cost €90.00<br><br>for more information email info@snmtraining.com</p>
         </div>
 
     </div>
@@ -105,17 +105,17 @@
 
     <div class="row">
         <div class="column">
-            <h2>Course 1</h2>
-            <p>Intermediate Excel<br>Boyle Enterprise Centre<br>March 10th 2020,<br>9.30/4.30<br>Cost €40.00<br><br>for more information email info@snmtraining.com</p>
+            <h2>Course 4</h2>
+            <p>Learning HTML<br>Boyle Enterprise Centre<br>March 25th 2020,<br>9.30/4.30<br>Cost €90.00<br><br>for more information email info@snmtraining.com</p>
         </div>
 
         <div class="column">
-            <h2>Course 1</h2>
-            <p>Intermediate Excel<br>Boyle Enterprise Centre<br>March 10th 2020,<br>9.30/4.30<br>Cost €40.00<br><br>for more information email info@snmtraining.com</p>
+            <h2>Course 5</h2>
+            <p>Introduction to Autocad<br>Boyle Enterprise Centre<br>March 30th 2020,<br>9.30/4.30<br>Cost €90.00<br><br>for more information email info@snmtraining.com</p>
         </div>
         <div class="column">
-            <h2>Course 1</h2>
-            <p>Intermediate Excel<br>Boyle Enterprise Centre<br>March 10th 2020,<br>9.30/4.30<br>Cost €40.00<br><br>for more information email info@snmtraining.com</p>
+            <h2>Course 6</h2>
+            <p>Team Leadership<br>Boyle Enterprise Centre<br>April 10th 2020,<br>9.30/4.30<br>Cost €90.00<br><br>for more information email info@snmtraining.com</p>
         </div>
 
     </div>
