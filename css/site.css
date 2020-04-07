@@ -1,4 +1,7 @@
-  
+.container {
+    padding: 15px;
+}
+
 .testimonial {
     border: 1px solid black;
     margin: 10px;
