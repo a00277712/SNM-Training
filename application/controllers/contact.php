@@ -15,6 +15,16 @@ class Contact extends CI_Controller {
         $this->load->view('contact/index');  
         $this->load->view('layout/footer');  
     }
+
+    public function thankYou($id = 0) {
+        if (is_null($id) || ($id == 0)) {
+            show_404(); // security                
+        }
+        $data['id'] = $id;
+        $this->load->view('layout/header');
+        $this->load->view('contact/thankYou', $data);
+        $this->load->view('layout/footer');
+    }
     
     public function edit($id = 0) {
         if (is_null($id) || ($id == 0)) {
@@ -22,9 +32,9 @@ class Contact extends CI_Controller {
         }
         $data = $this->Feedback_model->get($id);
         $data['id'] = $id;
-        $this->load->view('layout/header', $data);
+        $this->load->view('layout/header');
         $this->load->view('contact/edit', $data);
-        $this->load->view('layout/footer', $data);
+        $this->load->view('layout/footer');
     }
     
     public function store($id = null) {
@@ -73,7 +83,7 @@ class Contact extends CI_Controller {
 
             $id = $this->Feedback_model->insert($data);
         
-            redirect(site_url('/contact/edit') . '/' . $id, 'refresh');
+            redirect(site_url('/contact/thankyou') . '/' . $id, 'refresh');
         }
     }
 
